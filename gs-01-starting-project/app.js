@@ -1,3 +1,19 @@
+Vue.createApp({
+  data() {
+    return {
+      goals: [],
+      enteredValue: "",
+    };
+  },
+  methods: {
+    addGoal() {
+      this.goals.push(this.enteredValue);
+      this.enteredValue = "";
+    },
+  },
+}).mount("#app");
+
+/*
 const buttonEL = document.querySelector('button');
 const inputEL = document.querySelector('input');
 const listEL = document.querySelector('ul'); 
@@ -17,3 +33,4 @@ function addItem() {
 }
 
 buttonEL.addEventListener('click', addItem);
+*/
