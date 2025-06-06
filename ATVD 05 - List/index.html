@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@3.4.9/dist/vue.global.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Lists and Conditional Content</h1>
+    </header>
+    <section id="assignment">
+      <h2>Assignment</h2>
+      <!-- 1) Adicione código para gerenciar uma lista de tarefas em um app Vue -->
+      <!-- Ao clicar em "Add Task" (Adicionar Tarefa), uma nova tarefa com o texto digitado deve ser adicionada -->
+      <input type="text" v-model="enteredValue" />
+      <button @click="addTask">Add Task</button>
+      <ul v-if="tasksListVisible">
+        <!-- 2) Exiba a lista de tarefas abaixo do campo de entrada -->
+        <li @click="removeTask" v-for="task in tasks" :key="task.id">
+          {{ task }}
+        </li>
+      </ul>
+      <!-- 3) Quando o botão abaixo for pressionado, a lista deve ser exibida ou escondida -->
+      <!-- BÔNUS: Também atualize o texto do botão -->
+      <button @click="toggleTaskList">
+        {{ buttonCaption }}
+      </button>
+    </section>
+  </body>
+</html>
