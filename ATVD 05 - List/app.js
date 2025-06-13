@@ -17,7 +17,7 @@ const app = Vue.createApp({
             this.enteredValue = '';
         },
         removeTask(index) {
-            this.tasks.splice( index,  1);
+            this.tasks.splice(index, 1);
         },
         toggleTaskList() {
             this.tasksListVisible = !this.tasksListVisible;
