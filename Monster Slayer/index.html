@@ -20,14 +20,20 @@
       <section id="monster" class="container">
         <h2>Monster Health</h2>
         <div class="healthbar">
-          <div class="healthbar__value" :style="monsterBarStyles"></div>
+          <div class="healthbar__value" :style="monsterBarStyles">{{ this.monsterHealth + '%'}}</div>
         </div>
       </section>
       <section id="player" class="container">
         <h2>Your Health</h2>
         <div class="healthbar">
-          <div class="healthbar__value" :style="playerBarStyles"></div>
+          <div class="healthbar__value" :style="playerBarStyles">{{ this.playerHealth + '%'}}</div>
         </div>
+      </section>
+      <section class="container" v-if="winner">
+        <h2>Gamer Over!</h2>
+        <h3 v-if="this.winner === 'player' ">You Win!</h3>
+        <h3 v-else-if="this.winner === 'monster' ">You Lost!</h3>
+        <h3 v-if="this.winner === 'draw' ">It's a draw!</h3>
       </section>
       <section id="controls">
         <button @click="attackMonster()">ATTACK</button>
