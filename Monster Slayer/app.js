@@ -87,5 +87,3 @@ const app = Vue.createApp({
 });
 
 app.mount('#game');
-// Commit
-// "Fix battle log rendering, improve health bar behavior, and correct game over messages."
